@@ -1,10 +1,4 @@
-import {
-  Dispatch,
-  SetStateAction,
-  createContext,
-  useContext,
-  useState,
-} from 'react'
+import { createContext, useContext, useState } from 'react'
 import { CompanyData } from '../types'
 
 interface SearchContectProviderProps {
@@ -13,7 +7,7 @@ interface SearchContectProviderProps {
 
 export interface SearchContextProps {
   companies: CompanyData[]
-  setCompanies: Dispatch<SetStateAction<never[]>>
+  setCompanies: (companies: CompanyData[]) => void
   searchField: string
   setSearchField: (searchField: string) => void
   isSearchFieldEmpty: boolean
@@ -35,7 +29,7 @@ export const SearchContextProvider = ({
     <SearchContext.Provider
       value={{
         companies,
-
+        // @ts-ignore
         setCompanies,
         searchField,
         setSearchField,

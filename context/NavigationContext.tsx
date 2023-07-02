@@ -1,3 +1,4 @@
+import { SEARCH_PATH } from '../constants'
 import { createContext, useContext, useState } from 'react'
 
 interface NavigationContextProviderProps {
@@ -14,7 +15,7 @@ const NavigationContext = createContext<NavigationContextProps | null>(null)
 export const NavigationContextProvider = ({
   children,
 }: NavigationContextProviderProps) => {
-  const [activeTab, setActiveTab] = useState('')
+  const [activeTab, setActiveTab] = useState(SEARCH_PATH)
 
   return (
     <NavigationContext.Provider

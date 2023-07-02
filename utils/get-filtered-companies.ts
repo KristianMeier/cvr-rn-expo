@@ -1,4 +1,5 @@
 import { CompanyData } from 'types/sharedTypes'
+import { t } from '../i18n'
 
 export const getFilteredCompanies = (
   searchField: string,
@@ -6,9 +7,10 @@ export const getFilteredCompanies = (
 ) => {
   const filteredCompanies = allCompanies.filter(
     (company) =>
-      company.companyName.toLowerCase().includes(searchField.toLowerCase()) ||
-      company.address.toLowerCase().includes(searchField.toLowerCase()) ||
-      company.cvrNumber.toLowerCase().includes(searchField.toLowerCase())
+      t(company.companyName)
+        .toLowerCase()
+        .includes(searchField.toLowerCase()) ||
+      t(company.cvrNumber).toLowerCase().includes(searchField.toLowerCase())
   )
 
   return searchField ? filteredCompanies : []

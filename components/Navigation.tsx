@@ -31,7 +31,7 @@ export const Navigation = () => {
   const router = useRouter()
 
   const renderItem = ({ item }: renderItemProps) => {
-    const isActiveTab = activeTab === item.text
+    const isActiveTab = activeTab === item.path
 
     return (
       <TouchableOpacity
@@ -40,7 +40,7 @@ export const Navigation = () => {
           { borderColor: isActiveTab ? COLORS.black : COLORS.gray2 },
         ]}
         onPress={() => {
-          setActiveTab(item.text)
+          setActiveTab(item.path)
           router.push(item.path)
         }}>
         <Text
