@@ -18,7 +18,7 @@ import {
 } from '../theme'
 import { NavigationContextProps, useNagigationContext } from '../context'
 
-interface renderItemProps {
+interface NavigationItemProps {
   item: {
     text: string
     path: string
@@ -30,7 +30,7 @@ export const Navigation = () => {
     useNagigationContext() as NavigationContextProps
   const router = useRouter()
 
-  const renderItem = ({ item }: renderItemProps) => {
+  const NavigationItem = ({ item }: NavigationItemProps) => {
     const isActiveTab = activeTab === item.path
 
     return (
@@ -60,7 +60,7 @@ export const Navigation = () => {
       <View style={styles.tabsContainer}>
         <FlatList
           data={navigationData}
-          renderItem={renderItem}
+          renderItem={NavigationItem}
           keyExtractor={(item) => item.path}
           contentContainerStyle={{ columnGap: SIZES.small }}
           horizontal

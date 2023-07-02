@@ -17,12 +17,7 @@
     "baseUrl": ".",
     "noUnusedLocals": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "context/site-context.jsx"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"],
   "extends": "expo/tsconfig.base"
 }
